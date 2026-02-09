@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
-import RiveAnimation
+import 'package:rive/rive.dart';
 
-class Login_Screen extends StatefulWidget {
-  const Login_Screen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<Login_Screen> createState() => LoginScreen();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class LoginScreen extends State<login_screen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      //evita que se quite espacio de la camara frontal o el notch
+    return Scaffold(
+      //Evita que se quite espacio del nudge
       body: SafeArea(
         child: Column(
           children: [
-            Expanded (child:RiveAnimation.asset("animated_login_bear_riv")),
+            Expanded(
+              child: RiveAnimation.asset('animated_login_bear.riv')
+            )
           ],
-        ),
-       ),
+        )
+      )
+
+
+    );
   }
 }
